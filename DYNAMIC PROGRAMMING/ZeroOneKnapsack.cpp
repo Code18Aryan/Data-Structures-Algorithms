@@ -46,6 +46,40 @@ class Solution{
 
      // Tabulation bottom Up approach
 
+
+       int knapSackTabulation(int value[] , int weight[], int wt , int n){
+           
+           vector<vector<int>> dp(n + 1 , vector<int>(wt + 1 ));
+
+           for(int i=0; i<n+1; i++){
+                
+                 for(int j=0; j<wt+1; j++){
+                     
+                      if(i == 0 || j == 0) dp[i][j] = 0;
+                 }
+           }
+
+
+          for(int i=1; i<n+1; i++){
+                
+                 for(int j=1; j<wt+1; j++){
+                     
+                       if(weight[i-1] <= j){
+                          
+                           dp[i][j] = max(value[i-1] + dp[i-1][j- weight[i-1]] , dp[i-1][j]);
+                       }
+
+                       else{
+                          
+                            dp[i][j] = dp[i-1][j];
+                       }
+                 }
+          }
+
+          return dp[n][wt];
+
+     }
+
      
 
 
@@ -76,9 +110,13 @@ int main(){
 
      int maxProfitOptimal = leetcode.knapSackMemo(weight,profit,wt,n,dp);
 
+     int maxProfitTabu = leetcode.knapSackTabulation(profit,weight,wt,n);
+
      cout<<maxProfit; cout<<endl;
       
      cout<<maxProfitOptimal; 
+
+     cout<<maxProfitTabu;
 
 
      for(int i=0; i<dp.size(); i++){
