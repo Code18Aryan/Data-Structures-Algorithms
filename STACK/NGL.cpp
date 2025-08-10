@@ -47,7 +47,7 @@ int main(){
 
     solution leetcode;
 
-    vector<int> nums = {1,3,5,2,1,4};
+    vector<int> nums = {1,3,5,2,1,4,5};
 
    vector<int> ans =  leetcode.nearGreatestToLeft(nums);
 
