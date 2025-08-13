@@ -28,6 +28,7 @@ int main(){
        sort(nums.begin(), nums.end());
        for(auto x : nums){
            cout << x << " ";
+           // This will print the sorted array
        }
        cout << endl;
        int target = 46;
