@@ -2,7 +2,7 @@
 class Solution {
   public:
   
-  
+    // Stack toposort
     void dfs(int node, unordered_map<int,vector<int>> adj, vector<int>&vis, stack<int>&st){
         
         vis[node] = 1;
@@ -94,4 +94,5 @@ class Solution {
       
     }
     
+
 };
