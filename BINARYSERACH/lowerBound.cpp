@@ -30,6 +30,10 @@ int main(){
            cout << x << " ";
            // This will print the sorted array
        }
+
+       cout<<"hello";
+
+       
        cout << endl;
        int target = 46;
        int result = lowerBound(nums, target);
